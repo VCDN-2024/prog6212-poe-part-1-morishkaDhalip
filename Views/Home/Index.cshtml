@@ -1,0 +1,93 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    body {
+        background-color: #f4f4f4;
+        color: #333;
+    }
+
+    .container {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    .jumbotron {
+        background-color: #003366; /* Dark blue background */
+        color: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    .img-fluid {
+        max-height: 150px;
+        margin-bottom: 1rem;
+    }
+
+    .row {
+        margin-top: 2rem;
+    }
+
+    .btn {
+        width: 200px;
+        background-color: #0056b3; /* Slightly lighter blue */
+        border: none;
+        color: white;
+    }
+
+        .btn:hover {
+            background-color: #004080;
+            color: white;
+        }
+
+    .info-section {
+        background-color: #e7f0fa;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 20px;
+    }
+</style>
+
+<div class="container">
+    <div class="jumbotron text-center">
+        <h1>Welcome to the Contract Monthly Claim System</h1>
+        <p>This system simplifies the process of submitting and approving monthly claims for lecturers.</p>
+    </div>
+
+    <div class="row text-center">
+        <div class="col-md-4">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMcAAAD9CAMAAAA/OpM/AAAAflBMVEX///8AAADDw8O1tbVEREShoaEnJydeXl6Tk5Pn5+fq6upycnK5ubmnp6eBgYFKSkra2tr4+PjU1NSurq7W1taIiIjx8fG+vr5RUVEzMzM9PT3MzMxpaWkgICCamprh4eEZGRksLCwTExOFhYVvb28LCwtjY2M/Pz96enpWVlZ9dstqAAAHLElEQVR4nO2dfUOqMBSHATUNNcUKQ/Mly8Lv/wWvWrKNHWAguB/e8/x1F0fYcxXY2QZznAvT9dtq77aH/eptPXXSjFa261WJh5FiER5sV6gy/VBobGxX5io2Fw3fdk2uxP/ziGxX5EqiX41X2/W4msH5HLddixo4netr25WogfXR48N2JWpg4TiB7TrUQuDMbFehFl6cpe0q1MLS8WxXoRa8tEfUbQdRgcdcawljMi/w6NiuoCEd9oCCPbBgDyzYAwv2wII9sGAPLNgDC/bAgj2wYA8s2AML9sCCPbBgD5rwMcEvjvZFdFCp+gl1e/TER9+KoxcielQcnUfdHmPx0X5x9EREXzlgxB40/6fHj4hu9fnRGV/obYqjc/dk1aM+qnsEo6fFdrddvfcepb9meGx6w2i7263ePsdy9HSWcJ5WGIjy8e4T9A6rXRS//Mb6g+52u/jUp4Re5eEPpaDIy/fwFvIuFyI6ff+YivKz83z559dpUzKdKq7TY6xGuYdA33DxCPqpYGGYvl5JHp50R+06TixK3/V5xG6abZjlET5owe6k2ONJjo+f5RJ1ia7kQc1gjLI8ukTw7wzCXI8cFjV50NN717THiK5LcIWHS7Qpq3hIv6q19CumPcTM7LgjndbzQo/B81YpSXPtiXtNFQ+x9XjtGCSFJemRFPfKBOdBkcer40gnxVApEdfeCh6PYuvYkeJ7lIeo2akZLyb/D4s8jmVpal5PKS1r8VAu8tLuh5SH2N3pcinaU5Mij+NNZqZs3aRir/aQIhSPPuUh5ne9K/WODDxelJL0oyTalBU8pI8oHgvKQwSrHisDD6m0VDzyK3Wtx4ryEGfnyUPMItzherj5Ht/KHOe9gYd0RjTvEcxeLlAes9fBL68dZyk3F9E8UmTnH57aQCnn4YF4hOudut9Werx8uRpB6zymb7pFCz2kRv5Wmr1dzsP+eS493rNwpG8G7vuYLi+QHqIcKfWG8xDZN+Uh1ewF2+P9UthTHtJzAA6Yh5SpKh4F7asIzUNttwuPKN/jDc1DzaOcb7miOR4HNA8prz15JNfS73yPSb5Huj+xeQ/pUnrqLUi62T7zPT4cpS/L/n1Qupspz016lId0UTiWpMYigIfUZxUvk/6p3wwvu5/B/VrK/ZAAHvSjq2PSI7OHEOD8kPreBFn9u8gezsLV8DM8lH5zqHbiCS2luHS5ah7yj/BVOrMwPORz/chTQPz9bz6DnzjH8g/y/In0eG1mv4/qoacL1ccHg3l8vhvsul8jqR9/0xldSHphZ/Exf/oYHtu7U7H1vMVLip3zsGGYbO/46VLQUWNr8gCDPbBgDyzYAwv2wII9sGAPLNgDC/bAgj2wYA8s2AML9sCCPbBgDyzYAwv2wII9sPivPZY9y+gPstQ2n+GmPN2Jxyt7sEcDsAd7NAF73KXHevtgle2gHg9A2AML9sCCPbBgDyzYAwv2wII9sGAPLCp5eIPKNPX/cuv8/OtOPIbswR7swR7/uUfqdZMWPaR3oJfHT7241ZZH+FT80TIY9lPvKvcw02/PndO1adqjbjLepdo2D5+uS+s8Pu/Eo34NKx7hnXg0cHqwB5jH8k48/Pvw+HHuw8O7D49TI866RxQPTYm1lRPOnGdtWPegW8QkQeTq/K2zYd3DPGMMiBUgkneit8eD/DaSVzG1x+PH1RknW0085vGTIbHBcmMVPSauzlpsrjk/D5vyOBAHk6dltcTjmzjWpxzQDo8hcSj1gt0KD319Hm35nzZ4UAn9IRXTAg/q8Npih/gePeIwXS0K3iO9BNeJSA9D96D6Hh+Iuy24h0ccY08dxMRj/DMxZFGzx9IlIBdmhW4nkm/zJd7S6WB7kAuiZSwkCezx6BJkrKsI7EH2R8yyomE9wq2r42UE43oEK1cnZ7FYVI8PQoN4L3ICqAfxZm8pGSfA9ChIxgkgPah+Q/0ZKQVEj3dXR390WwXQg0rGC+cH4nkYJOMEcB7UYrnpZJwAzWPt6mjJOAGYB5XF6sk4AZbHs6tDJOMEUB5UMr4y6Pp2sDyoZNwk4yc+a9PDPBknwPEgk/GMLFYHxoNMxrOyWB0UDzIZz8xidUA8/L2rk53F6mB4hDtCg1hmOxsIj4DqUyhXFQgPamQ8N4vVQfBQV1D+pVdyr9Y9Yn2RLbcwi9Wx70EsoqwOKRth3YOiwtMWiB7vFfYK6NEv3ocOnodBMk4A5zGptlc0D7MsVgfMwzCL1cHy2FXVwPIgR8bNgPIwTcYJUh6l2vzVyH6OxTgZJ0h5dPuNQ800PGOejBd7WKREMo7sob8ruBQz2/X/49oTk16E+uZcf52kcuObkzcybgg1cHJryibjFE08lliS0sk4CTUgd1OKhpRN+bCrUdurD8gu4ptRJRnPgOyyvxHFI+MlCKmusJtgMqRchjn1DFXz1PijujAb9Kle7wbZDq9rGsr8AyH3s2UP0Fy2AAAAAElFTkSuQmCC" alt="Submit Claim" class="img-fluid" />
+            <h2>Submit a Claim</h2>
+            <p>Click below to start a new claim submission.</p>
+            <p><a class="btn btn-primary" asp-controller="Claims" asp-action="Create">Submit Claim &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <img src="data:image/png;base64,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" alt="View Claim" class="img-fluid" />
+
+            <h2>View Claims</h2>
+            <p>Review and manage all submitted claims.</p>
+            <p><a class="btn btn-secondary" asp-controller="Claims" asp-action="Index">View Claims &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <img src="data:image/png;base64,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" alt="Upload Documents" class="img-fluid" />
+            <h2>Upload Documents</h2>
+            <p>Upload supporting documents for your claims.</p>
+            <p><a class="btn btn-success" asp-controller="Claims" asp-action="Upload">Upload Documents &raquo;</a></p>
+        </div>
+    </div>
+
+    <div class="info-section">
+        <h3>Quick Tips</h3>
+        <p>Get started quickly with these easy steps:</p>
+        <ul>
+            <li><strong>Submit a Claim:</strong> Click on 'Submit Claim' to enter your claim details and submit them for review.</li>
+            <li><strong>View Claims:</strong> Check the status of your claims and see all past submissions.</li>
+            <li><strong>Upload Documents:</strong> Attach any necessary documents to support your claim submissions.</li>
+        </ul>
+    </div>
+</div>
+

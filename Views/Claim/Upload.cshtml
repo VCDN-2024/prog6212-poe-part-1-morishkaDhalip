@@ -1,0 +1,105 @@
+﻿@{
+    ViewData["Title"] = "Upload Documents";
+}
+
+<style>
+    body {
+        background-color: #f0f2f5;
+    }
+
+    .container {
+        background-color: white;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        margin-top: 20px;
+    }
+
+    .header {
+        background-color: #003366; /* Dark Blue */
+        color: white;
+        padding: 10px 20px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        margin: -20px -20px 20px -20px;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .btn-primary {
+        background-color: #0056b3; /* Darker blue */
+        border: none;
+    }
+
+        .btn-primary:hover {
+            background-color: #003366;
+        }
+
+    .info-text, .faq-text {
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+
+    .icon {
+        font-size: 24px;
+        color: #003366;
+        vertical-align: middle;
+        margin-right: 8px;
+    }
+
+    #uploadProgress {
+        width: 0%;
+        height: 30px;
+        background-color: #0056b3;
+        text-align: center;
+        line-height: 30px;
+        color: white;
+        margin-top: 10px;
+    }
+</style>
+
+<div class="container">
+    <div class="header">
+        <h2>@ViewData["Title"]</h2>
+    </div>
+    <div class="info-text">
+        <i class="icon fas fa-upload"></i> Upload any documents related to your claims here. You can select multiple files. Files will be shown below before you upload them.
+    </div>
+
+    <!-- File upload form -->
+    <form asp-action="Upload" method="post" enctype="multipart/form-data" onsubmit="return startUpload();">
+        <div class="form-group">
+            <label for="fileUpload" style="color: #003366;">Select File(s)</label>
+            <input type="file" class="form-control-file" id="fileUpload" name="documents" required multiple onchange="showFiles(this.files)">
+        </div>
+        <div id="fileList"></div>
+        <div id="uploadProgress"></div>
+        <button type="submit" class="btn btn-primary">Upload</button>
+    </form>
+
+    <div class="faq-text">
+        <h4>Frequently Asked Questions</h4>
+        <p><strong>What types of documents can I upload?</strong> You can upload PDF, DOCX, and image files related to your claims.</p>
+        <p><strong>Is there a file size limit?</strong> Yes, each file should not exceed 5MB in size.</p>
+        <p><strong>How do I know my files have been successfully uploaded?</strong> You will receive a confirmation message once your files are successfully uploaded and processed.</p>
+    </div>
+</div>
+
+<script>
+    function showFiles(files) {
+        var fileList = document.getElementById('fileList');
+        fileList.innerHTML = '';
+        for (var i = 0; i < files.length; i++) {
+            fileList.innerHTML += '<p>' + files[i].name + ' (' + Math.round(files[i].size / 1024) + ' KB)</p>';
+        }
+    }
+
+    function startUpload() {
+        var progressBar = document.getElementById('uploadProgress');
+        progressBar.style.width = '100%';
+        progressBar.textContent = 'Uploading...';
+        return true;
+    }
+</script>

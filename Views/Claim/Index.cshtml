@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "View Claims";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Date Submitted</th>
+            <th>Hours Worked</th>
+            <th>Hourly Rate</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1/1/2024</td>
+            <td>8</td>
+            <td>$25.00</td>
+            <td>Pending</td>
+            <td>
+                <button class="btn btn-success">Approve</button>
+                <button class="btn btn-danger">Reject</button>
+            </td>
+        </tr>
+        <!-- Additional rows would be dynamically generated -->
+    </tbody>
+</table>
